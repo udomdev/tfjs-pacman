@@ -135,11 +135,12 @@ async function predict() {
 
       // Make a prediction through mobilenet, getting the internal activation of
       // the mobilenet model, i.e., "embeddings" of the input images.
-      const embeddings = truncatedMobileNet.predict(img);
+      // const embeddings = truncatedMobileNet.predict(img);
+      const predictions = truncatedMobileNet.predict(img);
 
       // Make a prediction through our newly-trained model using the embeddings
       // from mobilenet as input.
-      const predictions = model.predict(img);
+      // const predictions = model.predict(embeddings);
 
       // Returns the index with the maximum probability. This number corresponds
       // to the class the model thinks is the most probable given the input.
