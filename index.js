@@ -41,7 +41,7 @@ async function loadTruncatedMobileNet() {
       'https://raw.githubusercontent.com/udomdev/tfjs-pacman/master/mobilenet_1/model.json');
 
   // Return a model that outputs an internal activation.
-  const layer = mobilenet.getLayer('conv_pw_13_relu');
+  const layer = mobilenet.getLayer('dense_3');
   return tf.model({inputs: mobilenet.inputs, outputs: layer.output});
 }
 
