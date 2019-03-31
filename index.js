@@ -139,7 +139,7 @@ async function predict() {
 
       // Make a prediction through our newly-trained model using the embeddings
       // from mobilenet as input.
-      const predictions = model.predict(embeddings);
+      const predictions = model.predict(img);
 
       // Returns the index with the maximum probability. This number corresponds
       // to the class the model thinks is the most probable given the input.
