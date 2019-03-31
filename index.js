@@ -37,8 +37,13 @@ let model;
 // Loads mobilenet and returns a model that returns the internal activation
 // we'll use as input to our classifier model.
 async function loadTruncatedMobileNet() {
+  // const mobilenet = await tf.loadLayersModel(
+  //     'https://raw.githubusercontent.com/udomdev/tfjs-pacman/master/mobilenet_1/model.json');
+
   const mobilenet = await tf.loadLayersModel(
-      'https://raw.githubusercontent.com/udomdev/tfjs-pacman/master/mobilenet_1/model.json');
+      'file://root/tfjs-pacman/mobilenet_1/model.json');
+
+  mobilenet.summary();
 
   // Return a model that outputs an internal activation.
   const layer = mobilenet.getLayer('dense_3');
